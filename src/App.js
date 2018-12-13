@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,9 +20,21 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <Example></Example>
       </div>
     );
   }
+}
+
+
+function Example() {
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <div>Current count is {count}</div>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
 }
 
 export default App;
